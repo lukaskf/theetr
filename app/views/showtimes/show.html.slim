@@ -1,0 +1,23 @@
+p#notice = notice
+
+p
+  strong Start time:
+  = @showtime.start_time
+p
+  strong End time:
+  = @showtime.end_time
+p
+  strong Seats purchased:
+  = @showtime.seats_purchased
+
+p
+  strong Movie:
+  = Movie.find(@showtime.movie_id)&.title
+
+p
+  strong Auditorium
+  = Auditorium.find(@showtime.auditorium_id)&.name
+
+=> link_to 'Edit', edit_showtime_path(@showtime)
+'|
+=< link_to 'Back', showtimes_path

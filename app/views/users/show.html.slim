@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @user.name
+p
+  strong Password:
+  = @user.password
+p
+  strong Role:
+  = @user.role
+p
+  strong Email:
+  = @user.email
+p
+  strong Credit card number:
+  = @user.credit_card_number
+p
+  strong Credit card expiration:
+  = @user.credit_card_expiration
+
+=> link_to 'Edit', edit_user_path(@user)
+'|
+=< link_to 'Back', users_path

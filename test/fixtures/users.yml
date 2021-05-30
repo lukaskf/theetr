@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  password: MyText
+  role: MyText
+  email: MyText
+  credit_card_number: MyText
+  credit_card_expiration: 2021-05-30
+
+two:
+  name: MyText
+  password: MyText
+  role: MyText
+  email: MyText
+  credit_card_number: MyText
+  credit_card_expiration: 2021-05-30

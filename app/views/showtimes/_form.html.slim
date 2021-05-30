@@ -1,0 +1,25 @@
+= form_for @showtime do |f|
+  - if @showtime.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@showtime.errors.count, "error")} prohibited this showtime from being saved:"
+      ul
+        - @showtime.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :start_time
+    = f.datetime_select :start_time
+  .field
+    = f.label :end_time
+    = f.datetime_select :end_time
+  .field
+    = f.label :seats_purchased
+    = f.text_field :seats_purchased, disabled: true
+  .field
+    = f.label :movie_id
+    = f.select :movie_id, @movie_options
+  .field
+    = f.label :auditorium_id
+    = f.select :auditorium_id, @auditorium_options
+
+  .actions = f.submit

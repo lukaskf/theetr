@@ -1,0 +1,23 @@
+h1 Listing auditoria
+
+table
+  thead
+    tr
+      th Name
+      th Seat capacity
+      th
+      th
+      th
+
+  tbody
+    - @auditoria.each do |auditorium|
+      tr
+        td = auditorium.name
+        td = auditorium.seat_capacity
+        td = link_to 'Show', auditorium
+        td = link_to 'Edit', edit_auditorium_path(auditorium)
+        td = link_to 'Destroy', auditorium, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Auditorium', new_auditorium_path

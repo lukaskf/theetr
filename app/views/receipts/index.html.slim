@@ -1,0 +1,21 @@
+h1 Listing receipts
+
+table
+  thead
+    tr
+      th Purchased at
+      th
+      th
+      th
+
+  tbody
+    - @receipts.each do |receipt|
+      tr
+        td = receipt.purchased_at
+        td = link_to 'Show', receipt
+        td = link_to 'Edit', edit_receipt_path(receipt)
+        td = link_to 'Destroy', receipt, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Receipt', new_receipt_path

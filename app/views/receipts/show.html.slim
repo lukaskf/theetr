@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Purchased at:
+  = @receipt.purchased_at
+
+=> link_to 'Edit', edit_receipt_path(@receipt)
+'|
+=< link_to 'Back', receipts_path
