@@ -1,1 +1,19 @@
-h1 theetr: showtime made easy
+.page-content
+  .banner
+    h1 Theetr
+    .admin-toggle
+      input.checkbox#toggle type='checkbox'
+      label.switch for='toggle'
+  - @showtimes.each do |day, movies|
+    .day-panel
+      .day-title == day
+      .day-content
+        - movies.each do |movie, shows|
+          .movie
+            .movie-title == movie
+            .movie-content
+              - shows.each do |show|
+                a.show href='receipts/new'
+                  | #{show.start_time} - #{show.end_time}
+
+
