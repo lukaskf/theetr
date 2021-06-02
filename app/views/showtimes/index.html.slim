@@ -1,10 +1,14 @@
-h1 Listing showtimes
+== render 'landing/banner', checked: true
+h1 Showtimes
 
 table
   thead
     tr
       th Start time
       th End time
+      th Movie Title
+      th Auditorium
+      th Seats Available
       th Seats purchased
       th
       th
@@ -15,8 +19,10 @@ table
       tr
         td = showtime.start_time
         td = showtime.end_time
+        td = showtime.movie.title
+        td = showtime.auditorium.name
+        td = showtime.auditorium.seat_capacity
         td = showtime.seats_purchased
-        td = link_to 'Show', showtime
         td = link_to 'Edit', edit_showtime_path(showtime)
         td = link_to 'Destroy', showtime, data: { confirm: 'Are you sure?' }, method: :delete
 

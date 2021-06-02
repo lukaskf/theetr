@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'landing#index'
-  get '/admin' => 'showtimes#index'
+  get '/admin' => 'landing#admin'
 
   resources :receipts
   resources :auditoria

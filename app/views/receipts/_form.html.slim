@@ -1,3 +1,4 @@
+== render 'landing/banner', checked: false
 = form_for @receipt do |f|
   - if @receipt.errors.any?
     #error_explanation
@@ -6,7 +7,22 @@
         - @receipt.errors.full_messages.each do |message|
           li = message
 
+  = f.hidden_field :showtime_id
+
   .field
     = f.label :purchased_at
-    = f.datetime_select :purchased_at
+    = f.hidden_field :purchased_at
+    = f.datetime_select :purchased_at, disabled: true
+  .field
+    = f.label :customer_name
+    = f.text_field :customer_name
+  .field
+    = f.label :customer_email
+    = f.text_field :customer_email
+  .field
+    = f.label :credit_card_number
+    = f.text_field :credit_card_number
+  .field
+    = f.label :credit_card_expiration
+    = f.datetime_select :credit_card_expiration
   .actions = f.submit

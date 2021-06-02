@@ -13,6 +13,11 @@ class ReceiptsController < ApplicationController
   # GET /receipts/new
   def new
     @receipt = Receipt.new
+    if params[:showtime_id].present?
+      @receipt.showtime = Showtime.find params[:showtime_id]
+    else
+      raise 'Cannot create Receipt without Showtime ID'
+    end
   end
 
   # GET /receipts/1/edit
@@ -64,6 +69,6 @@ class ReceiptsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def receipt_params
-      params.require(:receipt).permit(:purchased_at)
+      params.require(:receipt).permit(:purchased_at, :credit_card_number, :credit_card_expiration, :customer_name, :customer_email, :showtime_id)
     end
 end

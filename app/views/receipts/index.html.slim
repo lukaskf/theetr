@@ -1,4 +1,5 @@
-h1 Listing receipts
+== render 'landing/banner', checked: true
+h1 Receipts
 
 table
   thead
@@ -12,7 +13,6 @@ table
     - @receipts.each do |receipt|
       tr
         td = receipt.purchased_at
-        td = link_to 'Show', receipt
         td = link_to 'Edit', edit_receipt_path(receipt)
         td = link_to 'Destroy', receipt, data: { confirm: 'Are you sure?' }, method: :delete
 

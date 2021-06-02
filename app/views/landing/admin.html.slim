@@ -1,1 +1,18 @@
-h2 Admin
+== render 'landing/banner', checked: true
+.page-content
+  .menu
+    a href='auditoria/'
+      | Auditoriums
+      span.count == @auditorium_count
+
+    a href='movies/'
+      | Movies
+      span.count == @movie_count
+
+    a href='receipts/'
+      | Receipts
+      span.count == @receipts_count
+
+    a href='showtimes/'
+      | Showtimes
+      span.count == @showtime_count

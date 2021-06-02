@@ -1,0 +1,15 @@
+meta name="viewport" content="width=device-width, initial-scale=1"
+.banner
+  h1 Theetr
+  - if checked
+    h4 Admin
+  .admin-toggle
+    input.checkbox#toggle type='checkbox' checked=checked data-checked="#{checked}"
+    label.switch for='toggle'
+
+coffee:
+  $('#toggle').click (evt) =>
+    if $(evt.currentTarget).attr('data-checked') == 'true'
+      Turbolinks.visit('/')
+    else
+      Turbolinks.visit('/admin')

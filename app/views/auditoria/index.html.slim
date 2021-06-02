@@ -1,4 +1,5 @@
-h1 Listing auditoria
+== render 'landing/banner', checked: true
+h1 Auditoria
 
 table
   thead
@@ -14,7 +15,6 @@ table
       tr
         td = auditorium.name
         td = auditorium.seat_capacity
-        td = link_to 'Show', auditorium
         td = link_to 'Edit', edit_auditorium_path(auditorium)
         td = link_to 'Destroy', auditorium, data: { confirm: 'Are you sure?' }, method: :delete
 
