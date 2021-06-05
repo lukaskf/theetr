@@ -133,14 +133,13 @@
             background-color: black;
             color: $green;
           }
+        }
+        .full {
+          background-color: $red;
 
-          .full {
-            background-color: $red;
-
-            &:hover {
-              background-color: black;
-              color: $red
-            }
+          &:hover {
+            background-color: black;
+            color: $red
           }
         }
       }
