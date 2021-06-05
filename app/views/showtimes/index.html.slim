@@ -1,31 +1,17 @@
 == render 'landing/banner', checked: true
-h1 Showtimes
+.page-content
+  .day-panel
+    .day-title == "Showtimes"
+    .day-content
+      - @showtimes.each do |showtime|
+          .card
+            .card-title
+              | Movie: #{showtime.movie.title}
+            .card_title
+              | Auditorium: #{showtime.auditorium.name}
+            .card-content
+              a.capsule
+                | #{link_to 'Edit', edit_showtime_path(showtime)}
+              / a.capsule == link_to 'Destroy', showtime, data: { confirm: 'Are you sure?' }, method: :delete
 
-table
-  thead
-    tr
-      th Start time
-      th End time
-      th Movie Title
-      th Auditorium
-      th Seats Available
-      th Seats purchased
-      th
-      th
-      th
-
-  tbody
-    - @showtimes.each do |showtime|
-      tr
-        td = showtime.start_time
-        td = showtime.end_time
-        td = showtime.movie.title
-        td = showtime.auditorium.name
-        td = showtime.auditorium.seat_capacity
-        td = showtime.seats_purchased
-        td = link_to 'Edit', edit_showtime_path(showtime)
-        td = link_to 'Destroy', showtime, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Showtime', new_showtime_path
+    = link_to 'New Showtime', new_showtime_path

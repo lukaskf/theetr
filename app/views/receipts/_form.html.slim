@@ -8,11 +8,12 @@
           li = message
 
   = f.hidden_field :showtime_id
+  = f.hidden_field :purchased_at, value: Date.today
 
-  .field
-    = f.label :purchased_at
-    = f.hidden_field :purchased_at
-    = f.datetime_select :purchased_at, disabled: true
+  - @showtime = @receipt.showtime
+  h3
+    | Purchase Ticket for #{@showtime.movie.title} at #{@showtime.start_time.strftime('%l:%M %p')} on #{@showtime.start_time.strftime('%B %e, %Y')}
+
   .field
     = f.label :customer_name
     = f.text_field :customer_name
@@ -24,5 +25,5 @@
     = f.text_field :credit_card_number
   .field
     = f.label :credit_card_expiration
-    = f.datetime_select :credit_card_expiration
-  .actions = f.submit
+    = f.date_field :credit_card_expiration
+  .actions = f.submit "Purchase Ticket"

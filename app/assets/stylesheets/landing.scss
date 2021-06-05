@@ -7,6 +7,20 @@
   color: $yellow;
   height: auto;
   overflow: hidden;
+  text-align: center;
+
+  a {
+    font-size: 30px;
+    color: $yellow;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover, &:visited {
+      background-color: $black;
+      color: $yellow;
+    }
+
+  }
 
   h1, h4 {
     margin: 1em 1em;
@@ -84,7 +98,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    .movie {
+    .card {
       margin: 1em 1em;
       padding: 0.5em 0.5em;
       max-width: 500px;
@@ -94,15 +108,15 @@
       color: black;
       border-radius: 10px;
 
-      .movie-title {
+      .card-title {
         font-size: 16px;
         padding: 0.5em 0.5em;
         font-style: italic;
       }
 
-      .movie-content {
+      .card-content {
         padding: 0.5em 0.5em;
-        .show {
+        .capsule {
           background-color: $green;
           color: black;
           display: inline-block;
@@ -117,7 +131,16 @@
 
           &:hover {
             background-color: black;
-            color: $yellow;
+            color: $green;
+          }
+
+          .full {
+            background-color: $red;
+
+            &:hover {
+              background-color: black;
+              color: $red
+            }
           }
         }
       }
@@ -149,8 +172,12 @@
     text-decoration: none;
 
     &:hover {
-      background-color: black;
-      color: $yellow;
+      background-color: $yellow;
+      color: black;
+    }
+
+    &:visited {
+      color: black;
     }
   }
 

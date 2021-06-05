@@ -3,7 +3,7 @@ class ShowtimesController < ApplicationController
 
   # GET /showtimes or /showtimes.json
   def index
-    @showtimes = Showtime.all
+    @showtimes = Showtime.all.sort_by(&:start_time)
   end
 
   # GET /showtimes/1 or /showtimes/1.json

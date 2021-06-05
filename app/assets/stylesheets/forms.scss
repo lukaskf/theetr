@@ -3,15 +3,62 @@
 ////////////////////////////////////////////////////////////////////////////////
 @import "global";
 
-.form {}
-.field {
-  background-color: white;
+form {
+  margin: 0 0;
+  background-color: $black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
 
-  &:focus {
-    border: $blue 1px solid;
+.field {
+  max-width: 500px;
+  margin: 0 0;
+  padding: 1em 1em;
+  background-color: $black;
+  color: white;
+  border: none;
+  overflow: hidden;
+
+  label {
+    margin: 0 0;
+    font-weight: bold;
+    color: $yellow;
+  }
+
+  input {
+    margin: 0 0;
+    padding: 0.5em 0.5em;
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    font-family: monospace;
   }
 }
 
 .actions {
+  max-width: 500px;
+  margin: 0 0;
+  padding: 1em 1em;
+  background-color: $black;
+  color: white;
+  border: none;
+  overflow: hidden;
 
+  input {
+    margin: 0 0;
+    padding: 0.5em 0.5em;
+    background-color: $green;
+    border: none;
+    color: black;
+    border-radius: 10px;
+    font-family: monospace;
+    font-weight: bold;
+
+    &:hover {
+      background-color: black;
+      color: $green;
+    }
+  }
 }

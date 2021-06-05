@@ -30,8 +30,13 @@ class ReceiptsController < ApplicationController
 
     respond_to do |format|
       if @receipt.save
-        format.html { redirect_to @receipt, notice: "Receipt was successfully created." }
+        format.html { redirect_to '/', notice: "Purchase successful, enjoy #{@receipt.showtime.movie.title}!" }
         format.json { render :show, status: :created, location: @receipt }
+
+        @receipt.showtime.seat_purchased!
+
+        #send email
+
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @receipt.errors, status: :unprocessable_entity }
