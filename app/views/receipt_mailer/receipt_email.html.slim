@@ -1,1 +1,12 @@
-h3 test
+.receipt-email style="display: block; padding: 2em 2em; width: 250px; height: 150px; border-radius: 10px; background-color: #17171F; font-family: arial;"
+  .h3 style="color: #ffff;"
+    | Theetr: Thank you for your purchase!
+  hr
+  .h4 style="color: #E5C65C;"
+    | Movie: #{@receipt.showtime.movie.title}
+  .h4 style="color: #E5C65C;"
+    | Showtime: #{@receipt.showtime.start_time.strftime('%l:%M %p')}
+  .h4 style="color: #E5C65C;"
+    | Price: $#{@receipt.showtime.price}
+  .h4 style="color: #E5C65C;"
+    | Credit Card Ending in: ****#{@receipt.credit_card_number[-4..-1]}

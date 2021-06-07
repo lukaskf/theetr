@@ -35,7 +35,7 @@ class ReceiptsController < ApplicationController
 
         @receipt.showtime.seat_purchased!
 
-        #send email
+        ReceiptMailer.with(receipt: @receipt).receipt_email.deliver_now
 
       else
         format.html { render :new, status: :unprocessable_entity }

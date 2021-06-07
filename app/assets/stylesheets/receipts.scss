@@ -1,3 +1,21 @@
-// Place all the styles related to the receipts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+////////////////////////////////////////////////////////////////////////////////
+// Receipt Email
+////////////////////////////////////////////////////////////////////////////////
+@import "global";
+
+
+.receipt-email {
+  display: block;
+  position: relative;
+  background-color: $black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  width: 700px;
+  height: 700px;
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    color: $yellow;
+  }
+}
