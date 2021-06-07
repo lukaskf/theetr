@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_05_30_215909) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "auditoria", force: :cascade do |t|
     t.text "name", null: false
     t.integer "seat_capacity", default: 0, null: false
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_215909) do
     t.text "customer_email", null: false
     t.text "credit_card_number", null: false
     t.date "credit_card_expiration", null: false
-    t.integer "showtime_id"
+    t.bigint "showtime_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["showtime_id"], name: "index_receipts_on_showtime_id"
@@ -44,8 +47,8 @@ ActiveRecord::Schema.define(version: 2021_05_30_215909) do
     t.datetime "end_time", null: false
     t.integer "seats_purchased", default: 0, null: false
     t.float "price", default: 0.0, null: false
-    t.integer "movie_id"
-    t.integer "auditorium_id"
+    t.bigint "movie_id"
+    t.bigint "auditorium_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["auditorium_id"], name: "index_showtimes_on_auditorium_id"
