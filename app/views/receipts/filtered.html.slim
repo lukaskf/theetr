@@ -1,0 +1,27 @@
+== render 'landing/banner', checked: true
+.page-content
+  h4 Filter by Movie
+  .filter-toggle
+    input.checkbox#filterToggle type='checkbox' checked=true data-checked="true"
+    label.switch for='filterToggle'
+    - @receipts.each do |movie, receipts|
+      .day-panel
+        .day-title
+          | Movie: #{movie.title}
+        .day-content
+          - receipts.each do |receipt|
+            .card
+              .card-content
+                a href="#{}"
+                h4
+                  | Showtime: #{receipt.showtime.start_time.strftime('%l:%M %p')}
+                h4
+                  | Price: $#{sprintf('%.2f', receipt.showtime.price)}
+                h4
+                  | Credit Card Ending in: ****#{receipt.credit_card_number[-4..-1]}
+
+
+
+coffee:
+  $('#filterToggle').click (evt) =>
+      Turbolinks.visit('/receipts')

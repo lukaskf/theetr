@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'landing#index'
   get '/admin' => 'landing#admin'
 
+  get '/receipts/filtered'
   resources :receipts
   resources :auditoria
   resources :movies

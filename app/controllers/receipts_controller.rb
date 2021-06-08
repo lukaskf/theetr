@@ -3,7 +3,11 @@ class ReceiptsController < ApplicationController
 
   # GET /receipts or /receipts.json
   def index
-    @receipts = Receipt.all
+    @receipts = {'receipts' => Receipt.all}
+  end
+
+  def filtered
+    @receipts = Receipt.all.group_by{ |receipt| receipt.showtime&.movie }
   end
 
   # GET /receipts/1 or /receipts/1.json

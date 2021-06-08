@@ -1,19 +1,27 @@
 == render 'landing/banner', checked: true
-h1 Receipts
+.page-content
+  h4 Filter by Movie
+  .filter-toggle
+    input.checkbox#filterToggle type='checkbox' checked=false data-checked="false"
+    label.switch for='filterToggle'
+    - @receipts.each do |movie, receipts|
+      .day-panel
+        .day-title
+          | All Receipts
+        .day-content
+          - receipts.each do |receipt|
+            .card
+              .card-content
+                a href="#{}"
+                h4
+                  | Movie: #{receipt.showtime&.movie.title}
+                h4
+                  | Showtime: #{receipt.showtime&.start_time.strftime('%l:%M %p')}
+                h4
+                  | Price: $#{sprintf('%.2f', receipt&.showtime.price)}
+                h4
+                  | Credit Card Ending in: ****#{receipt&.credit_card_number[-4..-1]}
 
-table
-  thead
-    tr
-      th Purchased at
-      th
-      th
-      th
-
-  tbody
-    - @receipts.each do |receipt|
-      tr
-        td = receipt.purchased_at
-        td = link_to 'Edit', edit_receipt_path(receipt)
-        td = link_to 'Destroy', receipt, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
+coffee:
+  $('#filterToggle').click (evt) =>
+    Turbolinks.visit('/receipts/filtered')

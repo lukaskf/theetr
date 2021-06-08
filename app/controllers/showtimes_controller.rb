@@ -3,7 +3,9 @@ class ShowtimesController < ApplicationController
 
   # GET /showtimes or /showtimes.json
   def index
-    @showtimes = Showtime.all.sort_by(&:start_time)
+    @showtimes = Showtime.all.sort_by(&:start_time).group_by{ |showtime| showtime.start_time.to_date}.transform_values do |shows|
+      shows.group_by{ |showtime| showtime.movie.title }
+    end
   end
 
   # GET /showtimes/1 or /showtimes/1.json

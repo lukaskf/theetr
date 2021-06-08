@@ -24,3 +24,5 @@
     = f.select :auditorium_id, @auditorium_options
 
   .actions = f.submit
+  .destroy
+    | #{link_to 'Destroy', @showtime, data: { confirm: 'Are you sure?' }, method: :delete}

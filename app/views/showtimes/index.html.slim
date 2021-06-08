@@ -1,17 +1,19 @@
-== render 'landing/banner', checked: true
+== render 'landing/banner', checked: false
 .page-content
-  .day-panel
-    .day-title == "Showtimes"
-    .day-content
-      - @showtimes.each do |showtime|
+  h2 Edit Showtimes
+  = link_to 'New Showtime', new_showtime_path
+  - @showtimes.each do |day, movies|
+    .day-panel
+      .day-title == day.strftime('%B %e, %Y')
+      .day-content
+        - movies.each do |movie, shows|
           .card
-            .card-title
-              | Movie: #{showtime.movie.title}
-            .card_title
-              | Auditorium: #{showtime.auditorium.name}
+            .card-title == movie
             .card-content
-              a.capsule
-                | #{link_to 'Edit', edit_showtime_path(showtime)}
-              / a.capsule == link_to 'Destroy', showtime, data: { confirm: 'Are you sure?' }, method: :delete
-
-    = link_to 'New Showtime', new_showtime_path
+              - shows.each do |show|
+                - if show.seats_full?
+                  a.capsule.full href="#{edit_showtime_path(show)}"
+                    | #{show.start_time.strftime('%l:%M %p')} - #{show.end_time.strftime('%l:%M %p')}
+                - else
+                  a.capsule href="#{edit_showtime_path(show)}"
+                    | #{show.start_time.strftime('%l:%M %p')} - #{show.end_time.strftime('%l:%M %p')}

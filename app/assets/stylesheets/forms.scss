@@ -62,3 +62,32 @@ form {
     }
   }
 }
+
+.destroy {
+  max-width: 500px;
+  margin: 0 0;
+  padding: 1em 1em;
+  background-color: $black;
+  color: white;
+  border: none;
+  overflow: hidden;
+  text-decoration: none;
+
+  a {
+    margin: 0 0;
+    padding: 0.5em 0.5em;
+    background-color: $red;
+    border: none;
+    color: black;
+    border-radius: 10px;
+    font-family: monospace;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      background-color: black;
+      color: $red;
+      text-decoration: none;
+    }
+  }
+}

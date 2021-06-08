@@ -2,7 +2,7 @@ class Showtime < ApplicationRecord
   belongs_to :movie
   belongs_to :auditorium
 
-  has_many :receipts
+  has_many :receipts, dependent: :destroy
 
   def seat_purchased!
     unless self.seats_full?

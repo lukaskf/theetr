@@ -3,6 +3,7 @@ development:
   database: theetr_development
   pool: 5
   timeout: 5000
+
 test:
   adapter: postgresql
   database: theetr_test
