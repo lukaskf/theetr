@@ -1,4 +1,4 @@
-# <img src="app/assets/images/popcorn_black_white.svg" alt="popcorn" width="75" height="100"/> theetr (Coding Challenge)
+Theetr (Coding Challenge)
 ### Check it out <a href='theetr.herokuapp.com'>HERE!</a> (deployed on heroku)
 
 ## Development Process
