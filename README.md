@@ -1,4 +1,4 @@
-Theetr (Coding Challenge)
+# Theetr (Coding Challenge)
 ### Check it out <a href='theetr.herokuapp.com'>HERE!</a> (deployed on heroku)
 
 ## Development Process
