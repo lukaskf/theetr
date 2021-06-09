@@ -19,6 +19,11 @@ html, body, .banner, .page-content {
   overflow: scroll;
 }
 
+a {
+  text-decoration: none;
+  color: $yellow;
+}
+
 .link {
   background-color: $black;
 }

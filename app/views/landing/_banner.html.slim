@@ -1,7 +1,13 @@
 meta name="viewport" content="width=device-width, initial-scale=1"
 .banner
-  a href='/'
-    | Theetr
+  - if checked
+    - href='/admin'
+  - else
+    - href='/'
+  .logo-title
+    img alt='popcorn' src=asset_path('popcorn_black_white.svg')
+    a href=href
+      | Theetr
   - if checked
     h4 Admin
   .admin-toggle
