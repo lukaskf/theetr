@@ -1,4 +1,4 @@
-#<img src="app/assets/images/popcorn_black_white.svg" alt="popcorn"/> theetr (Coding Challenge)
+#<img src="app/assets/images/popcorn_black_white.svg" alt="popcorn" style="width:50px; height:auto;"/> theetr (Coding Challenge)
 ### Check it out <a href='theetr.herokuapp.com'>HERE!</a> (deployed on heroku)
 
 ## Development Process
@@ -23,9 +23,9 @@ dynamic feature would add a lot to the user by not having to visit separate page
 <img src="app/assets/images/desktop_preview.png" alt="desktop_preview"/>
 
 ### Mobile (in admin view)
-<img src="app/assets/images/admin_mobile_preview.png" alt="mobile_preview"/>
+<img src="app/assets/images/admin_mobile_preview.png" alt="mobile_preview" style="width:300px; height:auto;"/>
 
 ### Email Receipt
-<img src="app/assets/images/email_preview.png" alt="email_preview"/>
+<img src="app/assets/images/email_preview.png" alt="email_preview" style="width:300px; height:auto;"/>
   
 
