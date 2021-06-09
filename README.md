@@ -1,5 +1,5 @@
 # Theetr (Coding Challenge)
-### Check it out <a href='https://www.theetr.herokuapp.com'>HERE!</a> (deployed on heroku)
+### Check it out <a href='https://theetr.herokuapp.com'>HERE!</a> (deployed on heroku)
 
 ## Development Process
 * Database Model - This is really the most important step. Good SQl modeling builds the foundation of your
